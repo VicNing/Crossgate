@@ -1,0 +1,40 @@
+{
+  "name": "project_cross_road",
+  "version": "1.0.0",
+  "description": "The project CrossRoad.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "./node_modules/.bin/webpack-dev-server --content-base http/src/"
+  },
+  "author": "Neil",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "express": "",
+    "jquery": "^3.1.1",
+    "react": "",
+    "react-dom": "",
+    "react-redux": "",
+    "react-router": "",
+    "redux": "",
+    "request": "",
+    "reselect": ""
+  },
+  "devDependencies": {
+    "babel-core": "",
+    "babel-loader": "",
+    "babel-preset-es2015": "",
+    "babel-preset-react": "",
+    "css-loader": "",
+    "extract-text-webpack-plugin": "^2.0.0-beta",
+    "file-loader": "^0.10.0",
+    "html-webpack-plugin": "",
+    "node-sass": "",
+    "sass-loader": "",
+    "style-loader": "",
+    "url-loader": "^0.5.7",
+    "webpack": "",
+    "webpack-dev-server": ""
+  }
+}

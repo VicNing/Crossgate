@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/material/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/material/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/material/MaterialIcons-Regular.woff) format("woff"), url(../fonts/material/MaterialIcons-Regular.ttf) format("truetype"); }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
+/*** custom checkboxes ***/
+input[type=checkbox] {
+  display: none; }
+
+/* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block; }
+
+input[type=checkbox] + label:before {
+  content: "\f096"; }
+
+/* unchecked icon */
+input[type=checkbox] + label:before {
+  letter-spacing: 10px; }
+
+/* space between checkbox and label */
+input[type=checkbox]:checked + label:before {
+  content: "\f046"; }
+
+/* checked icon */
+input[type=checkbox]:checked + label:before {
+  letter-spacing: 5px; }
+
+/* allow space for check mark */
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+ul.nav.navbar-nav {
+  overflow-y: hidden; }
+
+.root {
+  height: 100%; }
+
+.navbar {
+  background-color: white;
+  border-radius: 0;
+  box-shadow: 1px 0 1px 1px gray; }
+  .navbar .navbar-brand {
+    font-size: 30px; }
+  .navbar a.navbar-brand {
+    color: #ff5722; }
+  .navbar a {
+    color: #757575; }
+    .navbar a:hover {
+      color: #ff5722; }
+  .navbar .icon-bar {
+    background-color: #ff5722; }
+
+.text-center {
+  text-align: center; }
+
+.search-result {
+  overflow-x: hidden; }
+  .search-result .custom-checkbox {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ff5722; }
+
+.welcome {
+  background-color: #9e9e9e;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center; }
+  .welcome .close-welcome {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 80px;
+    font-size: 35px; }
+  .welcome h2 {
+    text-align: center;
+    color: white;
+    font-size: 50px; }
+  .welcome .container {
+    text-align: center; }
+
+.list {
+  padding: 40px 0; }
+  .list .pagi {
+    text-align: center; }
+
+/*# sourceMappingURL=index.css.map */
