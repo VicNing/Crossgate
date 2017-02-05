@@ -88,5 +88,13 @@ ul.nav.navbar-nav {
   padding: 40px 0; }
   .list .pagi {
     text-align: center; }
+  .list .card .nickname {
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    width: 60%; }
+  .list .card .title {
+    overflow-x: hidden; }
 
 /*# sourceMappingURL=index.css.map */

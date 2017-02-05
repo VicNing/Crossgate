@@ -1,9 +1,6 @@
 /**
  * Created by Neil on 2017/2/3.
  */
-/**
- * Created by Neil on 2017/2/3.
- */
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -12,11 +9,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         main: path.resolve(__dirname, 'http/src/js', 'index.js'),
-        /*vendor: ['jquery', 'bootstrap', 'react', 'react-dom',
-         'redux', 'react-redux', 'react-router', 'reselect',
-         path.resolve(__dirname, 'http/src/js', 'bootstrap-select.js'),
-         path.resolve(__dirname, 'http/src/js', 'get-shit-done.js')]*/
-        vendor: ['react', 'react-dom', 'redux', 'react-redux', 'react-router', 'reselect']
+        vendor: ['jquery', 'bootstrap', 'react', 'react-dom',
+            'redux', 'react-redux', 'react-router', 'reselect',
+            path.resolve(__dirname, 'http/src/js', 'bootstrap-select.js'),
+            path.resolve(__dirname, 'http/src/js', 'get-shit-done.js')]
     },
     output: {
         filename: '[name].[chunkhash].js',
@@ -61,10 +57,10 @@ module.exports = {
             template: './http/src/index.html',
             filename: '../index.html'
         }),
-        /*new webpack.ProvidePlugin({
+        new webpack.ProvidePlugin({
             jQuery: 'jquery',
             $: 'jquery',
             jquery: 'jquery'
-        })*/
+        })
     ]
 };

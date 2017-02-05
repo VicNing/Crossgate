@@ -2,15 +2,19 @@
  * Created by Neil on 2017/2/3.
  */
 import React from 'react'
+import {connect} from 'react-redux'
+import {Link} from 'react-router'
 
-export default class NavBar extends React.Component {
+class NavBar extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <nav className="navbar navbar-fixed-top" role="navigation">
+            <nav
+                className={`navbar ${this.props.path === '/' && this.props.fixedTop ? 'navbar-fixed-top' : ''}`}
+                role="navigation">
                 <div className="container">
                     <div className="navbar-header">
                         <button id="menu-toggle" type="button" className="navbar-toggle">
@@ -24,10 +28,10 @@ export default class NavBar extends React.Component {
                     <div className="collapse navbar-collapse">
                         <ul className="nav navbar-nav navbar-right">
                             <li className="active">
-                                <a href="index.html">stream list</a>
+                                <Link href="index.html" to="/">stream list</Link>
                             </li>
                             <li>
-                                <a href="search.html">search</a>
+                                <Link href="search.html" to="/search">search</Link>
                             </li>
                             <li>
                                 <a href="#">management</a>
@@ -39,3 +43,17 @@ export default class NavBar extends React.Component {
         );
     }
 }
+
+function mapStateToProps(state, ownProps) {
+    return {
+        fixedTop: state.welcomeDisplayed,
+        path: ownProps.location.pathname
+    }
+}
+
+function mapDispatchToProps(dispatch, ownProps) {
+    return {}
+}
+
+const NavBarCon = connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default NavBarCon

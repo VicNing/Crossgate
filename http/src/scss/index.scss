@@ -37,6 +37,18 @@
   .pagi {
     text-align: center;
   }
+  .card {
+    .nickname {
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      vertical-align: bottom;
+      width: 60%;
+    }
+    .title{
+      overflow-x: hidden;
+    }
+  }
 }
 
 //
