@@ -1,6 +1,20 @@
 /**
  * Created by Neil on 2017/1/23.
  */
+const request = require('request');
+
+function doRequest(options, callback) {
+    return new Promise((resolve, reject) => {
+        request(options, function (err, res, body) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(callback(res, body));
+            }
+        })
+    });
+}
+
 function validStrToNum(str, fullLength) {
     if (fullLength) {
         switch (str) {
@@ -19,4 +33,4 @@ function validStrToNum(str, fullLength) {
     }
 }
 
-module.exports = {validStrToNum};
+module.exports = {doRequest, validStrToNum};

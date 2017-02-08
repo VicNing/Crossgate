@@ -3,11 +3,13 @@
  */
 import React from 'react'
 import {connect} from 'react-redux'
-import SearchRow from './SearchRow'
+import SearchRowCon from './SearchRow'
+import {syncLocalAndStore} from '../actions/index'
 
 class SearchTable extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {rowChecks: []};
     }
 
     render() {
@@ -17,8 +19,9 @@ class SearchTable extends React.Component {
                     <thead>
                     <tr>
                         <th/>
-                        <th>title</th>
                         <th>streamer</th>
+                        <th>roomid</th>
+                        <th>title</th>
                         <th>state</th>
                         <th className="text-center">platform</th>
                         <th className="text-center">online</th>
@@ -29,10 +32,13 @@ class SearchTable extends React.Component {
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td colSpan="5"/>
+                        <td colSpan="6"/>
                         <td className="text-center">
-                            <button type="button" className="btn btn-primary btn-fill btn-l">Add to list&nbsp;<i
-                                className="fa fa-chevron-right"/></button>
+                            <button type="button"
+                                    onClick={this.props.onBtnClick}
+                                    className="btn btn-primary btn-fill btn-l">
+                                Add to list&nbsp;<i className="fa fa-chevron-right"/>
+                            </button>
                         </td>
                     </tr>
                     </tfoot>
@@ -40,18 +46,38 @@ class SearchTable extends React.Component {
             </div>
         );
     }
+
+    // handleBtnClick(e) {
+    //     let data = this.props.data.filter((item, index) => {
+    //         if (this.state.rowChecks[index]) {
+    //             return item;
+    //         }
+    //     });
+    //     this.props.onBtnClick(data);
+    // }
+
 }
 
 function mapStateToProps(state, ownProps) {
     let rows = state.searchResult.data
-        .map((data, index) => <SearchRow key={index} data={data} index={index}/>);
+        .map((data, index) => {
+            return (
+                <SearchRowCon
+                    key={index}
+                    data={data}
+                    index={index}/>);
+        });
     return {
         rows: rows,
     }
 }
 
 function mapDispatchToProps(dispatch, ownProps) {
-    return {}
+    return {
+        onBtnClick: function (data) {
+            dispatch(syncLocalAndStore());
+        }
+    }
 }
 
 const SearchTableCon = connect(mapStateToProps, mapDispatchToProps)(SearchTable);

@@ -10,13 +10,13 @@ module.exports = {
     entry: {
         main: path.resolve(__dirname, 'http/src/js', 'index.js'),
         vendor: ['jquery', 'bootstrap', 'react', 'react-dom',
-            'redux', 'react-redux', 'react-router', 'reselect',
+            'redux', 'react-redux', 'react-router', 'reselect', 'redux-thunk',
             path.resolve(__dirname, 'http/src/js', 'bootstrap-select.js'),
             path.resolve(__dirname, 'http/src/js', 'get-shit-done.js')]
     },
     output: {
         filename: '[name].[chunkhash].js',
-        path: path.resolve(__dirname, 'http/dist/js'),
+        path: path.resolve(__dirname, 'server/dev/js'),
     },
     module: {
         rules: [

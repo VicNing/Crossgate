@@ -5,13 +5,15 @@ import React from 'react'
 import {connect} from 'react-redux'
 import StreamCardCon from './StreamCard'
 import PagiCon from './Pagi'
-import {changePage} from '../actions/index'
+import {changePage, fetchStreamList} from '../actions/index'
 
 class StreamList extends React.Component {
     constructor(props) {
         super(props);
         this.handlePrev = this.handlePrev.bind(this);
         this.handleNext = this.handleNext.bind(this);
+        this.initialRequest = this.initialRequest.bind(this);
+        this.initialRequest();
     }
 
     render() {
@@ -59,13 +61,24 @@ class StreamList extends React.Component {
             this.props.onPagiClick(this.props.currentPage + 1);
         }
     }
+
+    initialRequest() {
+        // if (this.props.amount === 0 && this.props.localAmount !== 0) {
+        //     this.props.initialRequest();
+        // }
+        if (this.props.localAmount !== 0 && this.props.amount !== this.props.localAmount) {
+            this.props.initialRequest();
+        }
+    }
+
 }
 
 function mapStateToProps(state, ownProps) {
     return {
         amount: state.streamList.amount,
         data: state.streamList.data,
-        currentPage: state.currentPage
+        currentPage: state.currentPage,
+        localAmount: state.localList.amount
     }
 }
 
@@ -73,6 +86,9 @@ function mapDispatchToProps(dispatch, ownProps) {
     return {
         onPagiClick: function (page) {
             dispatch(changePage(page));
+        },
+        initialRequest(){
+            dispatch(fetchStreamList());
         }
     }
 }

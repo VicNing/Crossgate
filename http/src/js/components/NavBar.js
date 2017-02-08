@@ -23,7 +23,7 @@ class NavBar extends React.Component {
                             <span className="icon-bar bar2"/>
                             <span className="icon-bar bar3"/>
                         </button>
-                        <a className="navbar-brand" href="http://gsdk.creative-tim.com">CrossGate</a>
+                        <Link className="navbar-brand" to="/">CrossGate</Link>
                     </div>
                     <div className="collapse navbar-collapse">
                         <ul className="nav navbar-nav navbar-right">
