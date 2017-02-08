@@ -14,7 +14,7 @@ const mapPlatformToApi = {
 };
 
 const app = express();
-app.use(express.static('dev'));
+app.use(express.static(contentDir));
 app.use(bodyParser.json());
 app.use(compression());
 
