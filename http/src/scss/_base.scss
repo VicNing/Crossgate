@@ -1,0 +1,39 @@
+@import "checkbox";
+
+html,
+body {
+  height: 100%;
+}
+
+ul.nav.navbar-nav {
+  overflow-y: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+.navbar {
+  background-color: white;
+  border-radius: 0;
+  box-shadow: 1px 0 1px 1px gray;
+  .navbar-brand {
+    font-size: 30px;
+  }
+  a.navbar-brand {
+    color: #ff5722;
+  }
+  a {
+    color: #757575; //todo to be extracted
+    &:hover {
+      color: #ff5722;
+    }
+  }
+  .icon-bar{
+    background-color:#ff5722;
+  }
+}
+
+.text-center{
+  text-align: center;
+}

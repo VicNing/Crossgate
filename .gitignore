@@ -1,0 +1,4 @@
+node_modules/
+.idea/
+http/cache/
+server/dev/

@@ -1,0 +1,48 @@
+@import "fonts";
+@import "base";
+@import "search";
+
+.welcome {
+  background-color: #9e9e9e;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  .close-welcome {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 80px;
+    font-size: 35px;
+  }
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+  }
+  .container {
+    text-align: center;
+  }
+}
+
+.list {
+  padding: 40px 0;
+  .pagi {
+    text-align: center;
+  }
+  .nickname {
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    width:60%;
+  }
+}
+
+//
+//footer {
+//  height: 300px;
+//  background-color: #fcfcfc; //todo to be extracted
+//}
