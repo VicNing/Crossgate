@@ -11,20 +11,9 @@
   "author": "Neil",
   "license": "ISC",
   "dependencies": {
-    "babel-polyfill": "^6.22.0",
     "body-parser": "^1.16.0",
-    "bootstrap": "^3.3.7",
-    "compression": "^1.6.2",
     "express": "",
-    "jquery": "^3.1.1",
-    "react": "",
-    "react-dom": "",
-    "react-redux": "",
-    "react-router": "",
-    "redux": "",
-    "redux-thunk": "^2.2.0",
-    "request": "",
-    "reselect": ""
+    "request": ""
   },
   "devDependencies": {
     "babel-core": "",
@@ -40,6 +29,16 @@
     "style-loader": "",
     "url-loader": "^0.5.7",
     "webpack": "",
-    "webpack-dev-server": ""
+    "webpack-dev-server": "",
+    "babel-polyfill": "^6.22.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "react": "",
+    "react-dom": "",
+    "react-redux": "",
+    "react-router": "",
+    "redux": "",
+    "redux-thunk": "^2.2.0",
+    "reselect": ""
   }
 }

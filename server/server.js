@@ -1,7 +1,6 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const compression = require('compression');
 const bodyParser = require('body-parser');
 
 const {host, port, contentDir} = require('./constants');
@@ -16,7 +15,6 @@ const mapPlatformToApi = {
 const app = express();
 app.use(express.static(contentDir));
 app.use(bodyParser.json());
-app.use(compression());
 
 app.get('/', function (req, res) {
     fs.createReadStream(path.join(__dirname, contentDir, 'index.html'), 'utf8')
