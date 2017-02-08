@@ -16,7 +16,7 @@ module.exports = {
     },
     output: {
         filename: '[name].[chunkhash].js',
-        path: path.resolve(__dirname, 'server/dev/js'),
+        path: path.resolve(__dirname, 'server/public/js'),
     },
     module: {
         rules: [
@@ -45,11 +45,11 @@ module.exports = {
             }
         ],
     },
-    devServer: {
-        inline: true,
-        historyApiFallback: true
-    },
-    devtool: "source-map",
+    // devServer: {
+    //     inline: true,
+    //     historyApiFallback: true
+    // },
+    // devtool: "source-map",
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({names: ['vendor', 'manifest']}),
         new ExtractTextPlugin({filename: '../css/bundle.css', disable: false, allChunks: true}),
