@@ -13,7 +13,8 @@
   "dependencies": {
     "body-parser": "^1.16.0",
     "express": "",
-    "request": ""
+    "request": "",
+    "webpack": ""
   },
   "devDependencies": {
     "babel-core": "",
@@ -28,7 +29,6 @@
     "sass-loader": "",
     "style-loader": "",
     "url-loader": "^0.5.7",
-    "webpack": "",
     "webpack-dev-server": "",
     "babel-polyfill": "^6.22.0",
     "bootstrap": "^3.3.7",
