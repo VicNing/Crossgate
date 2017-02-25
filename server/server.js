@@ -6,10 +6,12 @@ const bodyParser = require('body-parser');
 const {host, port, contentDir} = require('./constants');
 const douyuApi = require('./streamAPIs/douyuAPI');
 const pandaApi = require('./streamAPIs/pandaAPI');
+const twitchApi = require('./streamAPIs/twitchAPI');
 
 const mapPlatformToApi = {
     'douyu': douyuApi,
-    'panda': pandaApi
+    'panda': pandaApi,
+    'twitch':twitchApi
 };
 
 const app = express();
@@ -53,7 +55,7 @@ app.post('/api/streamList', function (req, res) {
 
 app.use(function (err, req, res, next) {
     console.error('custom' + err.stack);
-    res.status(500).send('Something broke!');
+    res.status(500).send('error');
 });
 
 app.listen(port, host);
