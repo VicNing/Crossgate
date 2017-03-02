@@ -11,7 +11,7 @@ const twitchApi = require('./streamAPIs/twitchAPI');
 const mapPlatformToApi = {
     'douyu': douyuApi,
     'panda': pandaApi,
-    'twitch':twitchApi
+    'twitch': twitchApi
 };
 
 const app = express();
