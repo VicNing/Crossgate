@@ -2,8 +2,5 @@ node_modules/
 .idea/
 http/cache/
 server/dev/
-<<<<<<< HEAD
 server/test.js
-=======
 http/static/gtsd/.sass-cache
->>>>>>> master
