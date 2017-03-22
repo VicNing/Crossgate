@@ -19,7 +19,7 @@ class Welcome extends React.Component {
     render() {
         return (
             <section className="welcome"
-                     style={{display: this.props.welcomeDisplayed ? 'flex' : 'none'}}>
+                     style={{display: this.props.welcomeDisplayed ? 'flex' : 'none',height:`${window.innerHeight}px`}}>
                 <i className="fa fa-times close-welcome"
                    aria-hidden="true"
                    style={{display: this.props.displayClose ? 'block' : 'none'}}

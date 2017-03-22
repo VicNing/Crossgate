@@ -4,12 +4,18 @@
 import React from 'react'
 import WelcomeCon from './Welcome'
 import StreamListCon from './StreamList'
+import Intro from './Intro'
+import Retro from './Retro'
+import Footer from './Footer'
 
 export default function IndexPage(props) {
     return (
-        <div style={{height: '100%'}}>
+        <div >
             <WelcomeCon/>
-            <StreamListCon/>
+            <Intro/>
+            <Retro/>
+            <Footer/>
+            {/*<StreamListCon/>*/}
         </div>
     );
 }
