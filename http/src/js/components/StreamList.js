@@ -17,35 +17,54 @@ class StreamList extends React.Component {
     }
 
     render() {
-        let cards = this.props.data
-            .slice((this.props.currentPage - 1) * 16, this.props.currentPage * 16)
-            .map((data, index) =>
-                <StreamCardCon
-                    data={data}
-                    key={(this.props.currentPage - 1) * 16 + index}/>);
+        /*let cards = this.props.data
+         .slice((this.props.currentPage - 1) * 16, this.props.currentPage * 16)
+         .map((data, index) =>
+         <StreamCardCon
+         data={data}
+         key={(this.props.currentPage - 1) * 16 + index}/>);
 
-        let pagis = [];
-        for (let i = 0; i < Math.ceil(this.props.amount / 16); i++) {
-            let page = i + 1;
-            pagis.push(<PagiCon key={page} page={page}/>);
-        }
-
-        return (
-            <section className="list">
-                <div className="container">
-                    <div className="row">
-                        {cards}
-                    </div>
-                    <div className="row pagi">
-                        <ul className="pagination pagination-blue pagination-no-border">
-                            <li><a href="#" onClick={this.handlePrev}>&laquo;</a></li>
-                            {pagis}
-                            <li><a href="#" onClick={this.handleNext}>&raquo;</a></li>
-                        </ul>
-                    </div>
+         let pagis = [];
+         for (let i = 0; i < Math.ceil(this.props.amount / 16); i++) {
+         let page = i + 1;
+         pagis.push(<PagiCon key={page} page={page}/>);
+         }*/
+        if (this.props.cards.length === 0) {
+            return (
+                <div style={{
+                    position: 'absolute',
+                    top: '50%',
+                    width:'100%',
+                    transform: 'translateY(-50%)',
+                }}>
+                    <p
+                        style={{
+                            textAlign: 'center',
+                            fontSize:'35px',
+                            color:'#757575'
+                        }}>
+                        Oops, seems like you have not subscribed one channel yet...
+                    </p>
                 </div>
-            </section>
-        );
+            );
+        } else {
+            return (
+                <section className="list">
+                    <div className="container">
+                        <div className="row">
+                            {this.props.cards}
+                        </div>
+                        <div className="row pagi">
+                            <ul className="pagination pagination-blue pagination-no-border">
+                                <li><a href="#" onClick={this.handlePrev}>&laquo;</a></li>
+                                {this.props.pagis}
+                                <li><a href="#" onClick={this.handleNext}>&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
     }
 
     handlePrev(e) {
@@ -74,10 +93,26 @@ class StreamList extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
+
+    let cards = state.streamList.data
+        .slice((state.currentPage - 1) * 16, state.currentPage * 16)
+        .map((data, index) =>
+            <StreamCardCon
+                data={data}
+                key={(state.currentPage - 1) * 16 + index}/>);
+
+    let pagis = [];
+    for (let i = 0; i < Math.ceil(state.streamList.amount / 16); i++) {
+        let page = i + 1;
+        pagis.push(<PagiCon key={page} page={page}/>);
+    }
+
     return {
-        amount: state.streamList.amount,
-        data: state.streamList.data,
-        currentPage: state.currentPage,
+        cards: cards,
+        pagis: pagis,
+        // amount: state.streamList.amount,
+        // data: state.streamList.data,
+        // currentPage: state.currentPage,
         localAmount: state.localList.amount
     }
 }

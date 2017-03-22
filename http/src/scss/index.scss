@@ -2,7 +2,11 @@
 @import "search";
 
 .welcome {
-  background-color: #9e9e9e;
+  //background-color: #9e9e9e;
+  background-image: url("../img/bg.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
   width: 100%;
   display: flex;
@@ -18,7 +22,7 @@
   }
   h2 {
     text-align: center;
-    color: white;
+    color: black;
     font-size: 50px;
   }
   .container {
@@ -29,6 +33,21 @@
     @media screen and (max-width: 767px) {
       margin: 0;
     }
+  }
+}
+
+.intro {
+  .container {
+    padding: 50px 0;
+    border-bottom: 1px solid #d0d4d9;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    width: 40%;
+    height: 40%;
   }
 }
 
@@ -47,6 +66,36 @@
     }
     .title{
       overflow-x: hidden;
+    }
+  }
+}
+
+footer {
+  background-color: #222;
+  color: #dbdbdb;
+  padding: 30px 0;
+  .overview {
+    border-bottom: 1px solid #dbdbdb
+  }
+  .links {
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  }
+  .copyright {
+    padding-top: 15px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.retro {
+  .retro-inner {
+    padding: 150px 0;
+    h3 {
+      text-align: center;
     }
   }
 }
