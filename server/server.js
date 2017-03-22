@@ -28,6 +28,11 @@ app.get('/search', function (req, res) {
         .pipe(res);
 });
 
+app.get('/subs', function (req, res) {
+    fs.createReadStream(path.join(__dirname, contentDir, 'index.html'), 'utf8')
+        .pipe(res);
+});
+
 app.get('/api/search', function (req, res) {
     mapPlatformToApi[req.query.platform]
         .searchByKeywords(req.query.keyword, 0)

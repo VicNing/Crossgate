@@ -13,13 +13,15 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import {Provider} from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import IndexPage from './components/IndexPage'
+import SubsPage from './components/SubsPage'
+import Footer from './components/Footer'
 import NavBarCon from './components/NavBar'
 import SearchPage from './components/SearchPage'
 import appReducer from './reducers/index'
 
 function App(props) {
     return (
-        <div style={{height: '100%'}}>
+        <div style={{height: '100%', position: 'relative'}}>
             <NavBarCon location={props.location}/>
             {props.children}
         </div>
@@ -58,6 +60,7 @@ ReactDOM.render(
             <Route path='/' component={App}>
                 <IndexRoute component={IndexPage}/>
                 <Route path='/search' components={SearchPage}/>
+                <Route path='/subs' components={SubsPage}/>
             </Route>
         </Router>
     </Provider>, document.getElementById('root'));

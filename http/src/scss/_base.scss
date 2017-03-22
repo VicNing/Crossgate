@@ -13,10 +13,13 @@ ul.nav.navbar-nav {
   height: 100%;
 }
 
+.z-depth-1 {
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.15);
+}
+
 .navbar {
   background-color: white;
   border-radius: 0;
-  box-shadow: 1px 0 1px 1px gray;
   .navbar-brand {
     font-size: 30px;
   }
@@ -29,11 +32,11 @@ ul.nav.navbar-nav {
       color: #ff5722;
     }
   }
-  .icon-bar{
-    background-color:#ff5722;
+  .icon-bar {
+    background-color: #ff5722;
   }
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
