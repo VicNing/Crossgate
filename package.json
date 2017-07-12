@@ -4,9 +4,11 @@
   "description": "The project CrossRoad.",
   "main": "index.js",
   "scripts": {
+    "build":"webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "./node_modules/.bin/webpack-dev-server --content-base http/src/",
-    "watch": "webpack --progress --watch"
+    "watch": "webpack --progress --watch",
+    "start":"export NODE_ENV=production;node ./server/server.js"
   },
   "author": "Neil",
   "license": "ISC",

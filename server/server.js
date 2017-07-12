@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 
-const {host, port, contentDir} = require('./constants');
+const { host, port, contentDir } = require('./constants');
 const douyuApi = require('./streamAPIs/douyuAPI');
 const pandaApi = require('./streamAPIs/pandaAPI');
 const twitchApi = require('./streamAPIs/twitchAPI');
@@ -15,7 +15,7 @@ const mapPlatformToApi = {
 };
 
 const app = express();
-app.use(express.static(contentDir));
+app.use(express.static(path.join(__dirname, contentDir)));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {

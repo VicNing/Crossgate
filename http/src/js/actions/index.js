@@ -50,7 +50,7 @@ export function fetchResult(input, select) {
     return function (dispatch) {
         dispatch(searchRequest('requesting', {input, select}));
         return $.ajax({
-            url: `http://${DOMAIN}:${PORT}${API}/search?keyword=${input}&platform=${select}`,
+            url: `/search?keyword=${input}&platform=${select}`,
             cache: false
         }).done(function (data, textStatus, jqXHR) {
             dispatch(searchRequest('success'));
@@ -99,7 +99,7 @@ export function fetchStreamList() {
         dispatch(streamlistRequest('requesting'));
         return $.ajax(
             {
-                url: `http://${DOMAIN}:${PORT}${API}/streamList`,
+                url: `/streamList`,
                 method: 'POST',
                 contentType: 'application/json; charset=UTF-8',
                 data: localList
